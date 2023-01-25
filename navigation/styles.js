@@ -1,7 +1,6 @@
-import { Colors } from "react-native/Libraries/NewAppScreen";
-import { fontSize, colour } from "./tokens";
+import { colour, fontSize } from '../styles/tokens';
 
-export const defaultHeaderStyle = {
+const defaultScreenOptions = {
   headerStyle: {
     backgroundColor: colour.grey[900],
     shadowColor: 'transparent',
@@ -9,14 +8,17 @@ export const defaultHeaderStyle = {
   },
   headerTintColor: colour.text['high'],
   headerShadowVisible: false,
+  test: 'test',
   headerTitleStyle: {
     fontSize: fontSize.headline.size,
     lineHeight: fontSize.headline.lineHeight,
     fontWeight: fontSize.headline.weight
-  } 
+  }, 
+  headerBackTitleVisible: false,
+  headerBackTitle: 'Back'   
 };
 
-export const lighterHeaderStyle = {
+const childScreenOptions = {
   headerStyle: {
     backgroundColor: colour.grey[800],
     shadowColor: 'transparent',
@@ -31,13 +33,23 @@ export const lighterHeaderStyle = {
   } 
 };
 
-export const headerBackTitleStyle = {
-  fontSize: fontSize.body.size,
-  lineHeight: fontSize.body.lineHeight,
-  fontWeight: fontSize.body.weight,
-}
+const modalScreenOptions = {
+  headerStyle: {
+    backgroundColor: colour.grey[800],
+    shadowColor: 'transparent',
+    borderBottomWidth: 0
+  },
+  headerTintColor: colour.text['high'],
+  headerShadowVisible: false,
+  headerTitleStyle: {
+    fontSize: fontSize.headline.size,
+    lineHeight: fontSize.headline.lineHeight,
+    fontWeight: fontSize.headline.weight
+  },
+  presentation: 'modal'
+};
 
-export const mainTabBarStyle = {
+const mainTabBarStyle = {
   tabBarStyle: {
     backgroundColor: colour.grey[800],
     borderTopWidth: 0,
@@ -54,5 +66,7 @@ export const mainTabBarStyle = {
     fontSize: fontSize.caption2.size,
     lineHeight: fontSize.caption2.lineHeight,
     fontWeight: fontSize.caption2.weight
-  },
+  }
 }
+
+export { defaultScreenOptions, childScreenOptions, modalScreenOptions, mainTabBarStyle}
